@@ -1,0 +1,581 @@
+@import url('grid.css');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-family: 'Poppins';
+    color: cadetblue;
+    border-bottom: 2px solid cadetblue;
+}
+h2 span {
+    color: black;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    height: 60px;
+    top: 55px;
+    width: 100%;
+    left: 0;
+    /* margin-top: 60px; */
+    position: absolute;
+    background-color: #5f9ea0;
+    border: 5px solid #557d7e;
+    border-left: none;
+    border-right: none;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Titillium Web';
+}
+header nav {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+    height: inherit;
+}
+header div {
+    vertical-align: top;
+}
+header a, header button {
+    display: inline-flex;
+    padding: 14px;
+    color: white;
+    text-shadow: 0 0 6px black;
+}
+/* header div:nth-child(1) div:nth-child(1) div:nth-child(1) a:hover,
+header div:nth-child(1) div:nth-child(1) div:nth-child(2) a:nth-child(1):hover,
+header div:nth-child(1) div:nth-child(1) div:nth-child(3) a:hover,
+header div:nth-child(1) div:nth-child(3) div:nth-child(1) a:hover {
+    border-bottom: 5px solid white;
+} */
+header nav div:nth-child(1) div:nth-last-child(1) a {
+    padding: 14px 5px;
+}
+.logo {
+    margin: -55px auto auto;
+    display: flex;
+    height: 150px;
+}
+.stored {
+    font-size: 10pt;
+    background: linear-gradient(to bottom right, #f8d700, #f69a02);
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+    margin-left: -5px;
+    text-shadow: 0 0 3px black;
+}
+.login {
+    padding: 7px;
+    margin: 7px;
+    background-color: #557d7e;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Titillium Web';
+    font-size: 14pt;
+    cursor: pointer;
+}
+.login i {
+    padding: 6px;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: cadetblue;
+    padding: 0;
+    margin: 0 0 0 -21px;
+    border: 5px solid #557d7e;
+    border-bottom: none;
+    border-radius: 5px;
+}
+.dropdown-menu li {
+    list-style: none;
+}
+.dropdown:hover + .dropdown-menu, .dropdown-menu:hover {
+    display: block;
+}
+.dropdown-menu li a {
+    width: 165px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu.cart li:hover {
+    background-color: #64babc;
+}
+.dropdown-menu.cart {
+    color: white;
+    text-shadow: 0 0 6px black;
+    height: auto;
+    max-height: 250px;
+    overflow: auto;
+}
+.dropdown-menu.cart li {
+    padding: 10px 20px;
+}
+.dropdown-menu.cart p span.confirm-order {
+    font-family: 'Titillium Web';
+    margin-left: 10px;
+    cursor: pointer;
+    color: lawngreen;
+}
+.dropdown-menu.cart li p.order-title {
+    margin: 10px 0;
+}
+.dropdown-menu.cart li span.order-price {
+    font-size: 13pt;
+}
+.dropdown-menu.cart button {
+    font-family: 'Poppins';
+    vertical-align: middle;
+    font-size: 13pt;
+    background: none;
+    border: none;
+}
+.dropdown-menu.cart button i {
+    margin: 3px 10px auto 0;
+}
+.dropdown-menu.cart button:hover {
+    color: #f2d3d3;
+    text-shadow: 0 0 8px #4f0301;
+    cursor: pointer;
+}
+.dropdown-menu.cart hr {
+    border-top: none;
+    border-bottom: 3px solid #557d7e;
+}
+ul::-webkit-scrollbar {
+    width: 10px;
+}
+ul::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+ul::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #557d7e;
+}
+
+.content {
+    margin: 200px 60px 100px;
+    min-width: 1080px;
+}
+.slide-show {
+    display: flex;
+    margin: 0 auto 60px;
+    width: 1000px;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    height: 356px !important;
+    overflow: hidden;
+}
+.slide-show img {
+    height: 100%;
+    width: auto;
+    /* animation: fadein .5s, fadeout .5s 4.5s; */
+}
+.slide-show img:nth-child(2),
+.slide-show img:nth-child(3) {
+    display: none;
+}
+.controls-slide-show {
+    display: inline-flex;
+    height: 30px !important;
+    position: absolute;
+    margin-top: 316px;
+    width: inherit;
+}
+.controls-slide-show span {
+    margin: 7px 3px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    cursor:pointer;
+    height:13px;
+    width:13px;
+    padding:0;
+    margin: auto;
+}
+.controls-slide-show span:nth-child(2) {
+    margin-right: 10px;
+}
+.controls-slide-show span:nth-child(3) {
+    margin: auto 0;
+}
+.controls-slide-show span:nth-child(4) {
+    margin-left: 10px;
+}
+.controls-slide-show .left,
+.controls-slide-show .right {
+    cursor: pointer;
+    color: white;
+    margin: auto;
+}
+.controls-slide-show .left {
+    margin-left: 20px;
+}
+.controls-slide-show .right {
+    margin-right: 20px;
+}
+
+.main-orders, .food-image {
+    overflow: hidden;
+    display: flex;
+    height: 260px !important;
+    border-radius: 5px;
+    box-shadow: 0 0 8px black;
+    margin: 0 20px 40px;
+    align-items: center;
+}
+.main-orders p {
+    position: absolute;
+    margin: 100px auto auto 15px;
+    width: 285px;
+    color: white;
+}
+.main-orders p, .main-orders span {
+    font-family: 'Titillium Web';
+    text-shadow: 0 0 8px black;
+}
+.main-orders .rating {
+    float: right;
+}
+.rating {
+    color: greenyellow;
+}
+.real-symbol {
+    color: khaki;
+}
+
+.menu-option {
+    padding: 20px 0;
+    font-family: 'Titillium Web';
+}
+.menu-option .col-lg-8 {
+    float: right;
+}
+.menu-option h3 {
+    margin: 0;
+    font-family: 'Poppins';
+}
+.menu-option i {
+    margin-right: 3px;
+}
+.menu-option i.with-space {
+    margin-left: 20px;
+}
+.menu-option button {
+    font-family: 'Titillium Web';
+    font-size: 12pt;
+    padding: 7px;
+    margin: 7px;
+    background-color: #557d7e;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.food-image:hover {
+    cursor: pointer;
+}
+.food-description {
+    float: right;
+    overflow: auto;
+    height: auto;
+    margin: 20px 0;
+    max-height: 150px;
+}
+.food-description p {
+    margin: 0;
+}
+.modal table tbody::-webkit-scrollbar,
+.food-description::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+.modal table tbody::-webkit-scrollbar-track,
+.food-description::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.modal table tbody::-webkit-scrollbar-thumb,
+.food-description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+.paginate {
+    display: flex;
+    background-color: cadetblue;
+    color: white;
+    border: 1.5px solid #557d7e;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 157px;
+}
+.paginate .prev,
+.paginate .next,
+.paginate .page-first,
+.paginate .page {
+    cursor: pointer;
+}
+.paginate .prev {
+    border-right: 1.5px solid #557d7e;
+    padding: 5px 10px;
+}
+.paginate .next,
+.paginate .page {
+    border-left: 1.5px solid #557d7e;
+    padding: 5px 10px;
+}
+.paginate .page-first {
+    padding: 5px 10px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: cadetblue;
+    height: auto;
+    padding: 20px 0 40px;
+    border-top: 5px solid #557d7e;
+    border-radius: 5px;
+}
+footer .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+footer .footer div {
+    vertical-align: top;
+}
+footer h3 {
+    font-family: 'Titillium Web';
+    color: white;
+    text-shadow: 0 0 8px black;
+    border-bottom: 2px solid #557d7e;
+}
+footer p {
+    font-size: 11pt;
+    font-family: 'Poppins';
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+footer .map {
+    height: 225px;
+    width: 100%;
+        border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 6px black;
+}
+footer iframe {
+    height: 100%;
+    width: 100%;
+}
+.footer a {
+    color: white;
+    margin-right: 10px;
+}
+.logo-footer {
+    display: flex;
+    margin: 0 auto;
+    height: 200px;
+    margin: 60px auto auto auto;
+}
+.google-map {
+    margin: 0 95px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+div#pay-mode div.modal-content {
+    width: 1000px;
+}
+.modal-content {
+    margin: auto;
+    width: 500px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    font-family: 'Titillium Web';
+    animation-name: zoomin;
+    animation-duration: .6s;
+}
+.modal-header, .modal-footer {
+    background-color: cadetblue;
+    padding: 20px;
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+.close:hover,
+.close:focus {
+    cursor: pointer;
+    animation: rotate .6s;
+}
+.modal-header h2 {
+    color: white !important;
+    margin: 0;
+    border:  none;
+}
+.modal-content .container {
+    padding: 20px;
+}
+div#pay-mode div.modal-content div.container {
+    display: inline-flex;
+}
+div#pay-mode div.modal-content div.container div.col-lg-8 {
+    padding: 0 20px;
+}
+div#pay-mode div.modal-content div.container div.col-lg-8 h2 {
+    margin-top: 0;
+}
+.modal .pay-mode label {
+    display: inline-block;
+    width: 170px;
+    height: 100px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.modal .pay-mode label img {
+    width: 100%;
+    height: 100%;
+}
+.modal table tbody {
+    display: block;
+    max-height: 250px;
+    overflow: auto;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+}
+.modal table tr {
+    table-layout: fixed;
+    width: 100%;
+    display: table;
+}
+.modal table thead th:nth-child(2),
+.modal table tbody tr td:nth-child(2) {
+    width: 80px;
+}
+.modal table tbody tr td:nth-last-child(1) {
+    min-width: 175px;
+    width: auto;
+}
+.modal table tbody tr:nth-child(even) {
+    background-color: rgba(211, 211, 211, 0.34);
+}
+.modal .price-total {
+    padding: 15px;
+    font-weight: bold;
+}
+.modal-footer {
+    color: white;
+    text-align: center;
+}
+.modal-footer a {
+    color: white;
+    text-transform: uppercase;
+}
+.google-plus, .facebook {
+    display: inline-block;
+    width: calc(100% - 40px);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 12pt;
+}
+.google-plus i, .facebook i {
+    margin-right: 10px;
+}
+.google-plus {
+    background-color: #dd4f43;
+}
+.facebook {
+    background-color: #4867aa;
+}
+.modal-content hr {
+    margin: 30px 0;
+}
+div#login-modal form input:nth-child(1),
+div#login-modal form input:nth-child(2) {
+    width: calc(100% - 25px);
+}
+div#login-modal form input,
+div#pay-mode form input {
+    padding: 10px;
+    font-family: 'Titillium Web';
+    font-size: 14pt;
+    margin-bottom: 20px;
+}
+div#login-modal form input[type="submit"],
+div#pay-mode form input[type="submit"] {
+    width: 100%;
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+div#pay-mode form input[type="submit"] {
+    margin: 128px 0 0;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('../_fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../_fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+}
+@keyframes fadein {
+    from { opacity: 0; filter: grayscale(100%) }
+    to { opacity: 1; filter: grayscale(0) }
+}
+@keyframes fadeout {
+    from { opacity: 1; filter: grayscale(0) }
+    to { opacity: 0; filter: grayscale(100%) }
+}
+@keyframes zoomin {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+@keyframes rotate {
+    from { transform: rotate(0); }
+    to { transform: rotate(180deg); }
+}

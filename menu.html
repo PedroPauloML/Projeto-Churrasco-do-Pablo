@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Site comercial de exposição e vendas dos produtos do estabelecimento Churrasco do Pablo. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churrasco do Pablo</title>
+  <link rel="stylesheet" href="_css/main.css">
+  <link rel="stylesheet" href="_css/font-awesome.css">
+  <link rel="shortcut icon" type="image/png" href="_images/logo.png"/>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="col-lg-5">
+        <div class="col-lg-3">
+          <a href="index.html">INÍCIO</a>
+        </div>
+        <div class="col-lg-4">
+          <a href="menu.html" class="dropdown">CARDÁPIO</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Espetinhos</a></li>
+            <li><a href="#">Salgados</a></li>
+            <li><a href="#">Comidas típicas</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-5">
+          <a href="#">FAÇA O SEU PEDIDO</a>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo">
+      </div>
+      <div class="col-lg-5">
+        <div class="col-lg-5">
+          <a href="#">FALE CONOSCO</a>
+        </div>
+        <div class="col-lg-4">
+          <a href="#" class="dropdown">CARRINHO <span class="stored">3</span></a>
+          <ul class="dropdown-menu cart">
+            <p>
+              Total: R$ 60,00 <span id="confirm-order" class="confirm-order">Concluir</span>
+            </p>
+            <hr>
+            <li>
+              <p class="order-title">Espetinho de Carne de Bode</p>
+              <span class="order-price"><i class="fa fa-money" aria-hidden="true"></i> R$ 20,00</span>
+              <button class="remove-order" onclick="if(confirm('Você tem certeza que deseja remover esse pedido?')) { removeOrder(this) }">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Remover
+              </button>
+            </li>
+            <li>
+              <p class="order-title">Espetinho de Carne de Bode</p>
+              <span class="order-price"><i class="fa fa-money" aria-hidden="true"></i> R$ 20,00</span>
+              <button class="remove-order" onclick="if(confirm('Você tem certeza que deseja remover esse pedido?')) { removeOrder(this) }">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Remover
+              </button>
+            </li>
+            <li>
+              <p class="order-title">Espetinho de Carne de Bode</p>
+              <span class="order-price"><i class="fa fa-money" aria-hidden="true"></i> R$ 20,00</span>
+              <button class="remove-order" onclick="if(confirm('Você tem certeza que deseja remover esse pedido?')) { removeOrder(this) }">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                Remover
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <button id="login" class="login">ACESSAR <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="content">
+
+      <div class="slide-show">
+
+        <img src="_images/img1.jpg" alt="" class="slide-images">
+        <img src="_images/img2.jpg" alt="" class="slide-images">
+        <img src="_images/img3.jpg" alt="" class="slide-images">
+
+        <div class="controls-slide-show">
+          <div class="left" onclick="prevImage()">&#10094;</div>
+          <span onclick="currentImage(0)"></span>
+          <span onclick="currentImage(1)"></span>
+          <span onclick="currentImage(2)"></span>
+          <div class="right" onclick="nextImage()">&#10095;</div>
+        </div>
+      </div>
+
+      <h2><span class="title">Cardápio</span></h2>
+
+      <div class="menu-option">
+        <div class="col-lg-12">
+          <div class="col-lg-4">
+            <div class="food-image">
+              <img src="_images/img1.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h3>Espetinho de Carne de Bode</h3>
+            <div class="food-description">
+              <p><b>Ingredientes:</b> carne de bode assada na brasa, coloral, pimenta
+              e sal. <b>Ingredientes:</b> carne de bode assada na brasa,
+              coloral, pimenta e sal. <b>Ingredientes:</b> carne de bode assada
+              na brasa, coloral, pimenta e sal. <b>Ingredientes:</b> carne de
+              bode assada na brasa, coloral, pimenta e sal. <b>Ingredientes:</b>
+              carne de bode assada na brasa, coloral, pimenta e sal.
+              <b>Ingredientes:</b> carne de bode assada na brasa, coloral,
+              pimenta e sal. <b>Ingredientes:</b> carne de bode assada na brasa, coloral, pimenta e sal.</p>
+            </div>
+            <p>
+              <i class="fa fa-money" aria-hidden="true"></i> R$ 20,00
+              <i class="fa fa-star-half-o with-space" aria-hidden="true"></i> 4,5
+              <i class="fa fa-clock-o with-space" aria-hidden="true"></i> Pronto em 15 min
+              <button class="" onclick="">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Adicionar ao carrinho
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-option">
+        <div class="col-lg-12">
+          <div class="col-lg-4">
+            <div class="food-image">
+              <img src="_images/img1.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <h3>Espetinho de Carne de Bode</h3>
+            <div class="food-description">
+              <p><b>Ingredientes:</b> carne de bode assada na brasa, coloral, pimenta
+              e sal. <b>Ingredientes:</b> carne de bode assada na brasa, coloral,
+              pimenta e sal.</p>
+            </div>
+            <p>
+              <i class="fa fa-money" aria-hidden="true"></i> R$ 20,00
+              <i class="fa fa-star-half-o with-space" aria-hidden="true"></i> 4,5
+              <i class="fa fa-clock-o with-space" aria-hidden="true"></i> Pronto em 15 min
+              <button class="" onclick="">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Adicionar ao carrinho
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="paginate">
+        <div class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+        <div class="page-first">1</div>
+        <div class="page">2</div>
+        <div class="page">3</div>
+        <div class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer">
+      <div class="col-lg-3">
+        <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo-footer">
+      </div>
+      <div class="col-lg-4 google-map">
+        <h3>Nossa localização</h3>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.2170475628714!2d-38.22386688454028!3d-9.402341793262405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70930baa78718f9%3A0x801def502584314!2sR.+Marieta+Ferraz%2C+48+-+Vila+Poty%2C+Paulo+Afonso+-+BA%2C+48602-160!5e0!3m2!1spt-BR!2sbr!4v1505060811109" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <h3>Contatos</h3>
+        <p>Tel.: (75) 9 5555-5555</p>
+        <p>Celular/Whatsapp: (75) 9 5555-5555</p>
+        <p>E-mail.: churrascodopablo@email.com</p>
+        <h3>Redes Sociais</h3>
+        <p>
+          <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-tumblr fa-2x" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="login-modal" class="modal" style="display: none">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+      </div>
+      <div class="container">
+        <a href="#" class="google-plus">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+          Continuar com o Google+
+        </a>
+        <a href="#" class="facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          Continuar com o Facebook
+        </a>
+        <hr>
+        <form action="#">
+          <input type="email" placeholder="Usuário" required>
+          <input type="password" placeholder="Senha" required>
+          <input type="submit" value="Entrar">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>Ainda não é cadastrado? <a href="#">Cadastre-se aqui!</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="pay-mode" class="modal" style="display: none">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Carrinho</h2>
+      </div>
+      <div class="container">
+        <div class="col-lg-4">
+          <table>
+            <thead>
+              <th>Pedido</th>
+              <th>Qtd.</th>
+              <th>Valor</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+              <tr>
+                <td>Espetinho de Carne de Bode</td>
+                <td>3</td>
+                <td>R$ 60,00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="price-total">
+            <div class="col-lg-6">TOTAL</div>
+            <div class="col-lg-6">R$ 600,00</div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <form action="#" class="pay-mode">
+            <h2><span class="title">Formas</span> de pagamento</h2>
+            <input type="radio" name="pay-mode" id="picpay" required>
+            <label for="picpay"><img src="_images/picpay.png" alt="Picpay"></label>
+            <input type="radio" name="pay-mode" id="pagseguro">
+            <label for="pagseguro"><img src="_images/pagseguro.jpg" alt="PagSeguro"></label>
+            <input type="radio" name="pay-mode" id="boleto">
+            <label for="boleto"><img src="_images/boleto.jpg" alt="Boleto Bancário"></label>
+            <input type="submit" value="Efetuar compra">
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    var myIndex = 0;
+    carousel();
+    var timeOut;
+
+    function carousel() {
+      var i;
+      var slide = document.getElementsByClassName("slide-images");
+      var spans = slide[0].parentElement.getElementsByTagName('span');
+      for (i = 0; i < slide.length; i++) {
+         slide[i].style.display = "none";
+      }
+      for (i = 0; i < spans.length; i++) {
+         spans[i].style.background = "none";
+      }
+      if (myIndex >= slide.length) {myIndex = 0}
+      slide[myIndex].style.display = "block";
+      spans[myIndex].style.backgroundColor = "white";
+      myIndex++;
+      timeOut = setTimeout(carousel, 5000);
+    }
+    function prevImage() {
+      clearTimeout(timeout);
+      myIndex -= 2;
+      carousel();
+    }
+    function nextImage() {
+      clearTimeout(timeOut);
+      carousel();
+    }
+
+    function removeOrder(element) {
+      element.parentElement.remove();
+    }
+
+    var loginmodal = document.getElementById('login-modal');
+    var btn = document.getElementById('login');
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        loginmodal.style.display = "block";
+    }
+    span.onclick = function() {
+        loginmodal.style.display = "none";
+    }
+
+    var modalpay = document.getElementById('pay-mode');
+    var btn = document.getElementById('confirm-order');
+    var span = document.getElementsByClassName("close")[1];
+    btn.onclick = function() {
+        modalpay.style.display = "block";
+    }
+    span.onclick = function() {
+        modalpay.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == loginmodal) {
+            loginmodal.style.display = "none";
+        }
+        if (event.target == modalpay) {
+            modalpay.style.display = "none";
+        }
+    }
+
+  </script>
+</body>
+</html>
