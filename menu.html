@@ -322,20 +322,20 @@
       var i;
       var slide = document.getElementsByClassName("slide-images");
       var spans = slide[0].parentElement.getElementsByTagName('span');
+      if (myIndex >= slide.length) {myIndex = 0}
       for (i = 0; i < slide.length; i++) {
          slide[i].style.display = "none";
       }
       for (i = 0; i < spans.length; i++) {
          spans[i].style.background = "none";
       }
-      if (myIndex >= slide.length) {myIndex = 0}
       slide[myIndex].style.display = "block";
       spans[myIndex].style.backgroundColor = "white";
       myIndex++;
       timeOut = setTimeout(carousel, 5000);
     }
     function prevImage() {
-      clearTimeout(timeout);
+      clearTimeout(timeOut);
       myIndex -= 2;
       carousel();
     }
