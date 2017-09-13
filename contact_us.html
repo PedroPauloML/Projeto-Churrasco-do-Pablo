@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Site comercial de exposição e vendas dos produtos do estabelecimento Churrasco do Pablo. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churrasco do Pablo</title>
+  <link rel="stylesheet" href="_css/main.css">
+  <link rel="stylesheet" href="_css/font-awesome.css">
+  <link rel="shortcut icon" type="image/png" href="_images/logo.png"/>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="col-lg-5">
+        <div class="col-lg-3">
+          <a href="index.html">INÍCIO</a>
+        </div>
+        <div class="col-lg-4">
+          <a href="menu.html">CARDÁPIO</a>
+        </div>
+        <div class="col-lg-5">
+          <a href="contact_us.html">FALE CONOSCO</a>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo">
+      </div>
+      <div class="col-lg-5">
+        <div class="col-lg-6">
+          <a href="#">CARRINHO</a>
+        </div>
+        <div class="col-lg-6">
+          <button id="login" class="login">ACESSAR <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="content">
+
+      <div class="contact-us">
+        <div class="col-lg-4 aling-top">
+          <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo-contact-us">
+        </div>
+        <div class="col-lg-7 datas">
+          <h3>Seja bem-vindo!</h3>
+          <p>Olá, meu nome é Pablo. Sou o seu churrasqueiro.</p>
+          <p>Não sabe aonde fazer uma janta saborosa e de preço acessível?</p>
+          <p>Vem pro churrasco do pablo! 🍢🍢</p>
+          <h3>Contatos</h3>
+          <p>Telefone/Whatsapp: (75) 9 8810-2501</p>
+          <p>E-mail: churrascariadopablo@email.com</p>
+          <h3>Redes Sociais</h3>
+          <p>
+            <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-tumblr fa-2x" aria-hidden="true"></i></a>
+          </p>
+          <h3>Nossa localização</h3>
+          <div class="google-m">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.2170475628714!2d-38.22386688454028!3d-9.402341793262405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70930baa78718f9%3A0x801def502584314!2sR.+Marieta+Ferraz%2C+48+-+Vila+Poty%2C+Paulo+Afonso+-+BA%2C+48602-160!5e0!3m2!1spt-BR!2sbr!4v1505060811109" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="login-modal" class="modal" style="display: none">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+      </div>
+      <div class="container">
+        <a href="#" class="google-plus">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+          Continuar com o Google+
+        </a>
+        <a href="#" class="facebook">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          Continuar com o Facebook
+        </a>
+        <hr>
+        <form action="#">
+          <input type="email" placeholder="Usuário" required>
+          <input type="password" placeholder="Senha" required>
+          <input type="submit" value="Entrar">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>Ainda não é cadastrado? <a href="#">Cadastre-se aqui!</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+
+  <script>
+    var loginmodal = document.getElementById('login-modal');
+    var btn = document.getElementById('login');
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        loginmodal.style.display = "block";
+    }
+    span.onclick = function() {
+        loginmodal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == loginmodal) {
+            loginmodal.style.display = "none";
+        }
+    }
+  </script>
+
+</body>
+</html>
