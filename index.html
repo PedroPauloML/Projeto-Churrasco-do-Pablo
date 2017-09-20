@@ -11,13 +11,15 @@
 </head>
 <body>
 
+  <!-- header -->
   <header>
-    <nav>
-      <div class="col-lg-5">
-        <div class="col-lg-3">
+
+    <nav class="default">
+      <div class="col-lg-5 col-md-5 col-sm-5">
+        <div class="col-lg-3 col-md-3 col-sm-3">
           <a href="index.html">INÍCIO</a>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-4">
           <a href="menu.html" class="dropdown">CARDÁPIO</a>
           <ul class="dropdown-menu">
             <li><a href="#">Espetinhos</a></li>
@@ -25,23 +27,47 @@
             <li><a href="#">Comidas típicas</a></li>
           </ul>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5 col-sm-5">
           <a href="contact_us.html">FALE CONOSCO</a>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-md-2 col-sm-2">
         <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo">
       </div>
-      <div class="col-lg-5">
-        <div class="col-lg-6">
-          <a href="#">CARRINHO</a>
+      <div class="col-lg-5 col-md-5 col-sm-5">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <a href="#" class="dropdown">CARRINHO</a>
+          <ul class="dropdown-menu cart">
+            <p class="price-total">
+              Total: R$ 00,00 <span id="confirm-order" class="confirm-order disabled">Concluir</span>
+            </p>
+          </ul>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-sm-6">
           <button id="login" class="login">ACESSAR <i class="fa fa-sign-in" aria-hidden="true"></i></button>
         </div>
       </div>
     </nav>
-  </header>
+
+    <nav class="small">
+      <div class="col-xs-3">
+        <a class="menu dropdown"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">INDEX</a></li>
+          <li><a href="menu.html">CARDÁPIO</a></li>
+          <li><a href="contact_us.html">FALE CONOSCO</a></li>
+          <li><a href="#" class="dropdown">CARRINHO</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6">
+        <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo">
+      </div>
+      <div class="col-xs-3">
+        <button id="login" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i></button>
+      </div>
+    </nav>
+
+  </header> <!-- / header -->
 
   <div class="container">
 
@@ -66,61 +92,49 @@
 
       <div class="col-lg-12">
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img1.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img1.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img2.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img2.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img3.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img3.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
       </div>
 
       <div class="col-lg-12">
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img1.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img1.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img2.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img2.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
         <div class="col-lg-4">
-          <a href="#">
-            <div class="main-orders">
-              <img src="_images/img3.jpg" alt="">
-              <p>Preço: <span class="real-symbol">R$</span> 20,00
-              <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
-            </div>
-          </a>
+          <div class="main-orders">
+            <img src="_images/img3.jpg" alt="" onclick="showFood(this)">
+            <p>Preço: <span class="real-symbol">R$</span> 20,00
+            <span class="rating"><i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</span></p>
+          </div>
         </div>
       </div>
 
@@ -130,57 +144,114 @@
 
   <footer>
     <div class="footer">
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-md-3 col-sm-6">
         <img src="_images/logo.png" alt="Churrasco do Pablo" class="logo-footer">
       </div>
-      <div class="col-lg-4 google-map">
+      <div class="col-lg-4 col-md-4 col-sm-6 google-map">
         <h3>Nossa localização</h3>
         <div class="map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.2170475628714!2d-38.22386688454028!3d-9.402341793262405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70930baa78718f9%3A0x801def502584314!2sR.+Marieta+Ferraz%2C+48+-+Vila+Poty%2C+Paulo+Afonso+-+BA%2C+48602-160!5e0!3m2!1spt-BR!2sbr!4v1505060811109" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
-      <div class="col-lg-3">
-        <h3>Contatos</h3>
-        <p>Tel.: (75) 9 5555-5555</p>
-        <p>Celular/Whatsapp: (75) 9 5555-5555</p>
-        <p>E-mail.: churrascodopablo@email.com</p>
-        <h3>Redes Sociais</h3>
-        <p>
-          <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-tumblr fa-2x" aria-hidden="true"></i></a>
-        </p>
+      <div class="col-lg-3 col-md-4">
+        <div class="col-lg-12 col-sm-6">
+          <h3>Contatos</h3>
+          <p>Tel.: (75) 9 5555-5555</p>
+          <p>Celular/Whatsapp: (75) 9 5555-5555</p>
+          <p>E-mail.: churrascodopablo@email.com</p>
+        </div>
+        <div class="col-lg-12 col-sm-6">
+          <h3>Redes Sociais</h3>
+          <p>
+            <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-tumblr fa-2x" aria-hidden="true"></i></a>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Login Modal -->
   <div id="login-modal" class="modal" style="display: none">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2>Login</h2>
+    <div class="modal-content zoomin">
+      <div class="signin">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Login</h2>
+        </div>
+        <div class="container">
+          <a href="#" class="google-plus">
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            Continuar com o Google+
+          </a>
+          <a href="#" class="facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            Continuar com o Facebook
+          </a>
+          <hr>
+          <form action="#">
+            <input type="email" placeholder="Usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="submit" value="Entrar">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Ainda não é cadastrado? <a href="#" onclick="signup()">Cadastre-se aqui!</a></p>
+        </div>
       </div>
-      <div class="container">
-        <a href="#" class="google-plus">
-          <i class="fa fa-google-plus" aria-hidden="true"></i>
-          Continuar com o Google+
-        </a>
-        <a href="#" class="facebook">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-          Continuar com o Facebook
-        </a>
-        <hr>
-        <form action="#">
-          <input type="email" placeholder="Usuário" required>
-          <input type="password" placeholder="Senha" required>
-          <input type="submit" value="Entrar">
-        </form>
+      <div class="signup">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Cadastrar-se</h2>
+        </div>
+        <div class="container">
+          <form action="#">
+            <input type="email" placeholder="Usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="submit" value="Cadastrar">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Já tem uma conta? <a href="#" onclick="signin()">Faça login!</a></p>
+        </div>
       </div>
-      <div class="modal-footer">
-        <p>Ainda não é cadastrado? <a href="#">Cadastre-se aqui!</a></p>
       </div>
     </div>
   </div>
+
+  <!-- Orders Main Modal -->
+  <div id="orders-main-modal" class="modal" style="display: none">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Espetinho de Carne de Bode</h2>
+      </div>
+      <div class="container">
+        <div class="col-lg-4 food-img" onclick="showFoodImage(this)">
+          <img src="" alt="">
+        </div>
+        <div class="col-lg-7 food-desc">
+          <p><b>Ingredientes:</b> carne de bode assada na brasa, coloral, pimenta e sal. </p>
+          <p>Avaliação: <i class="fa fa-star-half-o" aria-hidden="true"></i> 4,5</p>
+        </div>
+        <button class="default" onclick="addOrder()">Adicionar ao carrinho</button>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div> <!-- / #orders-main-modal -->
+
+  <!-- Food Image Modal -->
+  <div id="food-image-modal" class="modal" style="display: none">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="" alt="">
+    </div>
+  </div> <!-- / #food-image-modal -->
+
+  <script src="_js/jquery-3.2.1.min.js"></script>
+  <script src="_js/notify.min.js"></script>
 
   <script>
 
@@ -214,19 +285,118 @@
       carousel();
     }
 
+    function lockScroll() {
+      document.querySelector('body').style = 'overflow: hidden';
+    }
+    function unlockScroll() {
+      document.querySelector('body').style = '';
+    }
+
     var loginmodal = document.getElementById('login-modal');
-    var btn = document.getElementById('login');
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-        loginmodal.style.display = "block";
+    var btn = document.querySelectorAll('#login');
+    var span = loginmodal.querySelectorAll(".close");
+    var $signin = document.getElementsByClassName("signin")[0];
+    var $signup = document.getElementsByClassName("signup")[0];
+    btn.forEach(btn => btn.onclick = function() {
+      loginmodal.style.display = "block";
+      lockScroll();
+    });
+    function signup() {
+      if ($signin.classList.contains('rotateY-90')) {
+        $signin.classList.remove('rotateY-90');
+      }
+      $signin.classList.add('rotateY90');
+      setTimeout(function () {
+        $signin.style = "display: none;";
+      }, 600);
+      setTimeout(function () {
+        $signup.style = "display: block;";
+        if ($signup.classList.contains('rotateY90')) {
+          $signup.classList.remove('rotateY90');
+        }
+        $signup.classList.add('rotateY-90');
+      }, 600);
+    }
+    function signin() {
+      if ($signup.classList.contains('rotateY-90')) {
+        $signup.classList.remove('rotateY-90');
+      }
+      $signup.classList.add('rotateY90');
+      setTimeout(function () {
+        $signup.style = "display: none;";
+      }, 600);
+      setTimeout(function () {
+        $signin.style = "display: block;";
+        if ($signin.classList.contains('rotateY90')) {
+          $signin.classList.remove('rotateY90');
+        }
+        $signin.classList.add('rotateY-90');
+      }, 600);
+    }
+    span.forEach(span => span.onclick = function() {
+      loginmodal.style.display = "none";
+      $signin.style = "";
+      $signin.classList.remove("rotateY90");
+      $signup.style = "";
+      $signup.classList.remove("rotateY-90");
+      unlockScroll();
+    });
+
+    var orders_main_modal = document.querySelector('#orders-main-modal');
+    var span = orders_main_modal.querySelector(".close");
+    function showFood(element) {
+      var img = element;
+      orders_main_modal.querySelector('img').src = img.src;
+      orders_main_modal.style = 'display: block';
+      lockScroll();
     }
     span.onclick = function() {
-        loginmodal.style.display = "none";
+      orders_main_modal.style.display = "none";
+      unlockScroll();
     }
-    window.onclick = function(event) {
-        if (event.target == loginmodal) {
-            loginmodal.style.display = "none";
+
+    function addOrder() {
+      $.notify.addStyle('default', {
+        html: "<span data-notify-text></span>",
+        classes: {
+          base: {
+            "font-size": "12pt"
+          }
         }
+      });
+      $.notify('Pedido adicionado ao carrinho', 'success');
+    }
+
+    var food_img_modal = document.getElementById('food-image-modal');
+    var span = food_img_modal.querySelector(".close");
+    function showFoodImage(element) {
+      var img = element.querySelector("img");
+      food_img_modal.querySelector("img").src = img.src;
+      food_img_modal.style.display = "block";
+      lockScroll();
+    }
+    span.onclick = function() {
+      food_img_modal.style.display = "none";
+      unlockScroll();
+    }
+
+    window.onclick = function(event) {
+      if (event.target == loginmodal) {
+        loginmodal.style.display = "none";
+        $signin.style = "";
+        $signin.classList.remove("rotateY90");
+        $signup.style = "";
+        $signup.classList.remove("rotateY-90");
+        unlockScroll();
+      }
+      if(event.target == orders_main_modal) {
+        orders_main_modal.style.display = 'none';
+        unlockScroll();
+      }
+      if (event.target == food_img_modal) {
+        food_img_modal.style.display = "none";
+        unlockScroll();
+      }
     }
   </script>
 </body>

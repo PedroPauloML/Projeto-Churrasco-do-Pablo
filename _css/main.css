@@ -32,6 +32,12 @@ h2 span {
 .aling-top {
     vertical-align: top;
 }
+[data-notify-text] {
+    font-size: 12pt;
+}
+.disabled {
+    cursor: not-allowed !important;
+}
 
 header {
     height: 60px;
@@ -63,6 +69,9 @@ header a, header button {
     color: white;
     text-shadow: 0 0 6px black;
 }
+header nav.small {
+    display: none;
+}
 header nav div:nth-child(1) div:nth-last-child(1) a {
     padding: 14px 5px;
 }
@@ -81,7 +90,7 @@ header nav div:nth-child(1) div:nth-last-child(1) a {
     margin-left: -5px;
     text-shadow: 0 0 3px black;
 }
-.login {
+.login, .menu {
     padding: 7px;
     margin: 7px;
     background-color: #557d7e;
@@ -91,7 +100,7 @@ header nav div:nth-child(1) div:nth-last-child(1) a {
     font-size: 14pt;
     cursor: pointer;
 }
-.login i {
+.login i, .menu i {
     padding: 6px;
 }
 .dropdown-menu {
@@ -126,6 +135,9 @@ header nav div:nth-child(1) div:nth-last-child(1) a {
     height: auto;
     max-height: 250px;
     overflow: auto;
+}
+.dropdown-menu.cart p.price-total {
+    padding: 0 20px;
 }
 .dropdown-menu.cart li {
     padding: 10px 20px;
@@ -253,6 +265,9 @@ ul::-webkit-scrollbar-thumb {
     margin-right: 20px;
 }
 
+.main-orders {
+    cursor: pointer;
+}
 .main-orders, .food-image {
     overflow: hidden;
     display: flex;
@@ -303,14 +318,39 @@ ul::-webkit-scrollbar-thumb {
     font-family: 'Titillium Web';
     font-size: 12pt;
     padding: 7px;
-    margin: 7px;
+    margin: 7px 0 7px 7px;
     background-color: #557d7e;
     border-radius: 6px;
     border: none;
     color: white;
     cursor: pointer;
 }
-.food-image:hover {
+.menu-option .food-image img {
+    z-index: -1;
+}
+.menu-option .food-image:hover {
+    background-color: rgba(255,255,255,.4);
+}
+div#orders-main-modal .food-img:hover img {
+    filter: grayscale(1);
+}
+.menu-option .food-image:hover::before,
+div#orders-main-modal .food-img:hover::before {
+    font-family: FontAwesome;
+    z-index: 1;
+    content: "\f03e";
+    position: absolute;
+    color: white;
+    font-size: 40pt;
+    margin: 90px 0 auto 20px;
+    text-shadow: 0 0 10px black;
+}
+div#orders-main-modal .food-img:hover::before {
+    margin: 50px 0 auto 20px;
+    font-size: 30pt;
+}
+.food-image:hover,
+div#orders-main-modal .food-img {
     cursor: pointer;
 }
 .food-description {
@@ -355,12 +395,18 @@ ul::-webkit-scrollbar-thumb {
     outline: none;
 }
 .search-food button.search {
+    /* content: "\f002"; */
     border: none;
     background: none;
     font-size: 14pt;
     color: darkgrey;
     cursor: pointer;
 }
+/* .search-food input.search::before {
+    font-family: FontAwesome;
+    display: block;
+} */
+
 
 .paginate {
     display: flex;
@@ -396,13 +442,13 @@ footer {
     left: 0;
     background-color: cadetblue;
     height: auto;
-    padding: 20px 0 40px;
     border-top: 5px solid #557d7e;
     border-radius: 5px;
 }
 footer .footer {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px 0 40px;
 }
 footer .footer div {
     vertical-align: top;
@@ -459,11 +505,13 @@ footer iframe,
     background-color: rgba(0,0,0,0.4);
 }
 div#pay-mode div.modal-content {
-    width: 1000px;
+    max-width: 1000px;
+    width: auto;
 }
 .modal-content {
     margin: auto;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     background-color: #fefefe;
     border: 1px solid #888;
     font-family: 'Titillium Web';
@@ -544,6 +592,35 @@ div#pay-mode div.modal-content div.container div.col-lg-8 h2 {
     padding: 15px;
     font-weight: bold;
 }
+div#food-image-modal .modal-content {
+    height: 400px;
+}
+div#food-image-modal .modal-content img {
+    width: 100%;
+    height: 100%;
+}
+div#food-image-modal .modal-content .close {
+    position: absolute;
+    margin-left: 465px;
+}
+div#rating-modal img, div#orders-main-modal img {
+    width: 100%;
+    height: auto;
+}
+div#rating-modal .br-widget {
+    text-align: center;
+    margin: 25px auto;
+}
+div#rating-modal .br-widget a {
+    font-size: 18pt;
+}
+.rating-img, .food-img {
+    vertical-align: top;
+    margin-top: 35px;
+}
+.rating-desc, .food-desc {
+    padding: 0 20px;
+}
 .modal-footer {
     color: white;
     text-align: center;
@@ -578,19 +655,33 @@ div#pay-mode div.modal-content div.container div.col-lg-8 h2 {
 .modal-content hr {
     margin: 30px 0;
 }
+div#login-modal .modal-content {
+    background: none;
+    border: none;
+}
+div#login-modal .signin {
+    background: white;
+    border: 1px solid #888;
+}
+div#login-modal .signup {
+    display: none;
+    background: white;
+    border: 1px solid #888;
+}
 div#login-modal form input:nth-child(1),
 div#login-modal form input:nth-child(2) {
     width: calc(100% - 25px);
 }
 div#login-modal form input,
-div#pay-mode form input {
+div#pay-mode form input,
+div#rating-modal form input[type="submit"],
+button.default {
     padding: 10px;
     font-family: 'Titillium Web';
     font-size: 14pt;
     margin-bottom: 20px;
 }
-div#login-modal form input[type="submit"],
-div#pay-mode form input[type="submit"] {
+form input[type="submit"], button.default {
     width: 100%;
     background-color: cadetblue;
     border: none;
@@ -599,6 +690,169 @@ div#pay-mode form input[type="submit"] {
 }
 div#pay-mode form input[type="submit"] {
     margin: 128px 0 0;
+}
+
+.rotateY90 {
+    animation: rotateY90 .6s;
+}
+.rotateY-90 {
+    animation: rotateY-90 .6s;
+}
+.zoomin {
+    animation: zoomin .6s;
+}
+
+@media screen and (max-width: 1000px) {
+    header nav {
+        min-width: auto;
+        width: auto;
+    }
+    .container .content {
+        min-width: auto;
+    }
+    .slide-show {
+        width: 100%;
+    }
+    .controls-slide-show {
+        width: 880px;
+    }
+
+    div#pay-mode form label {
+        width: 140px;
+    }
+
+    footer .footer {
+        padding: 40px;
+    }
+    footer .google-map {
+        margin: 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav div:nth-child(1) div:nth-last-child(1) a {
+        padding: 0 5px;
+    }
+    .logo {
+        margin: -36px auto auto;
+        display: flex;
+        height: 130px;
+    }
+
+    .controls-slide-show {
+        width: 648px;
+    }
+
+    .main-orders p {
+        width: 575px;
+    }
+
+    div#pay-mode form label {
+        width: 170px;
+    }
+    div#pay-mode form input[type="submit"] {
+        margin: 27px 0 0;
+    }
+    .rating-img, .food-img {
+        margin: 0;
+    }
+    .rating-desc, .food-desc {
+        padding: 0;
+    }
+
+    footer .google-map {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    header nav.default {
+        display: none;
+    }
+    header nav.small {
+        display: block;
+    }
+    header div {
+        height: inherit;
+    }
+    header .logo {
+        margin: -21px auto auto;
+        display: flex;
+        height: 100px;
+    }
+    .dropdown-menu {
+        margin: 0;
+        width: 96%;
+    }
+    .dropdown-menu li a {
+        width: 91%;
+    }
+    .stored {
+        font-size: 12pt;
+        border-radius: 16px;
+        padding: 5px 12px;
+        margin-left: 0;
+    }
+    .dropdown-menu.cart {
+        border: 5px solid cadetblue;
+        background-color: #557d7e;
+        z-index: 1;
+    }
+    .dropdown-menu.cart hr {
+        border-top: none;
+        border-bottom: 3px solid cadetblue;
+    }
+
+    .controls-slide-show {
+        width: 200px;
+    }
+
+    .search-food input {
+        width: 142px;
+    }
+
+    .main-orders p {
+        width: 145px;
+        margin: 96px auto 0 8px;
+    }
+    .main-orders .rating {
+        float: none;
+        display: block;
+    }
+    .menu-option i.with-space {
+        margin-left: 0;
+    }
+    .food-description {
+        max-height: 250px;
+    }
+
+    .contact-us .datas {
+        margin: 0;
+    }
+    .contact-us .datas p.email {
+        word-break: break-all;
+    }
+
+    .logo-footer {
+        margin: 0 auto auto auto;
+    }
+
+    .modal {
+        padding-top: 0;
+    }
+    div#food-image-modal .modal-content .close {
+        margin-left: 286px;
+    }
+
+    div#pay-mode div.modal-content div.container {
+        display: inline-block;
+    }
+    div#pay-mode div.modal-content div.container div.col-lg-8 {
+        padding: 0;
+    }
+    div#pay-mode form label {
+        width: 225px;
+    }
 }
 
 @font-face {
@@ -624,4 +878,12 @@ div#pay-mode form input[type="submit"] {
 @keyframes rotate {
     from { transform: rotate(0); }
     to { transform: rotate(180deg); }
+}
+@keyframes rotateY90 {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(90deg); }
+}
+@keyframes rotateY-90 {
+    from { transform: rotateY(90deg); }
+    to { transform: rotateY(0deg); }
 }
